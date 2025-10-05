@@ -1,0 +1,7 @@
+fn main() {
+  let x 42
+  let t typeof(x)
+  let r reflect(x)
+  let e eval(x + 1)
+  return e
+}

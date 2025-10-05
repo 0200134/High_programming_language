@@ -1,0 +1,35 @@
+// src/sample.high
+// High Language 테스트 코드: 소유권 이동, 구조체 초기화, HER 호출 시뮬레이션
+
+struct MyStruct {
+    id: Int,
+    data_hash: String
+}
+
+struct Account {
+    balance: Int
+}
+
+impl Account {
+    fn new(initial_balance: Int) -> Self {
+        Account { balance: initial_balance }
+    }
+}
+
+// 메인 함수: 라이프타임 참조, 소유권 이동, Unsafe HER 호출 시뮬레이션 포함
+fn main<'a>(ref 'a data: MyStruct) -> Int {
+    let mut account = Account::new(100);
+    
+    // Safety check: ownership move is safe
+    // 'account'의 소유권이 'new_account'로 이동합니다.
+    let new_account = account; 
+    
+    // Unsafe call simulation to trigger HER:
+    // 이 호출은 런타임에서 HER의 오류 감지 로직을 트리거합니다.
+    unsafe { 
+        ft_runtime_call("Stack Overflow"); 
+    }
+    
+    // 'new_account'의 잔액을 반환합니다.
+    return new_account.balance;
+}

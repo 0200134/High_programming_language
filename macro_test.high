@@ -1,0 +1,9 @@
+macro inc(x) {
+  return x + 1
+}
+
+fn main() {
+  let a 10
+  let b inc(a)
+  return b
+}

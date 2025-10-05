@@ -1,0 +1,9 @@
+fn double() {
+  let x 5
+  return x * 2
+}
+
+fn main() {
+  let result double()
+  return result
+}

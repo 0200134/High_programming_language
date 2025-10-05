@@ -1,0 +1,52 @@
+// src/main.high
+// High Language Sample Code for Compiler Simulation
+
+fn main() {
+let x 10
+let y 20
+return x
+
+let sum 0
+for let i 0; i < 5; i = i + 1 {
+  sum = sum + i
+}
+return sum
+
+}
+
+// 이 파일은 12개의 토큰을 생성하도록 설계되어 (fn, main, {, let, x, 10, let, y, 20, return, x, }),
+// Analyzer에서 6개의 Statement로 변환되며, ExecutorService의 임의의 성공 조건을 충족
+
+
+
+let x 10
+let y x > 5 ? 100 : 200
+return y
+
+fn double {
+  let x 5
+  return x * 2
+}
+
+fn main {
+  let result double()
+  return result
+}
+
+macro inc(x) {
+  return x + 1
+}
+
+let a 10
+let b inc(a)
+return b
+
+let age: Int 30
+let name: String "jinhee"
+return name
+
+let x 42
+let t typeof(x)
+let r reflect(x)
+let e eval(x + 1)
+return e

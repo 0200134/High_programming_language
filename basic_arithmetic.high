@@ -1,0 +1,5 @@
+fn main() {
+  let x 10
+  let y x > 5 ? 100 : 200
+  return y
+}
